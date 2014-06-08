@@ -6,7 +6,7 @@ var
   _ = require('lodash'),
   uid = require('uid2');
 
-exports.encodeStates = encodeStates = {};
+var encodeStates = exports.encodeStates = {};
   
 var Encoder = exports.Encoder = function (options) {
     // Module variables
