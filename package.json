@@ -1,0 +1,17 @@
+{
+  "name": "handbrake-route",
+  "version": "0.0.0",
+  "description": "Express route exposing handbrake-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Ledbetter III",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.4.1",
+    "handbrake-js": "^1.1.2",
+    "lodash": "^2.4.1",
+    "uid2": "0.0.3"
+  }
+}
