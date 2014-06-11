@@ -33,24 +33,24 @@ _.extend(Encoder.prototype, {
         };
         
         var encOptions = _.extend({}, this.fileEncodeOptions, {
-            input: vid.input,
-            output: vid.output
+            input: state.input,
+            output: state.output
         });
 
         var handle = handbrake.spawn(encOptions)
             .on('error', function (err) {
-                console.log('Error while encoding ', vid, ': ', err);
+                console.log('Error while encoding ', state, ': ', err);
                 delete encodeStates[id];
             })
             .on('progress', function (progress) {
-                vid.progress = progress;
+                state.progress = progress;
             })
             .on("complete", function(params) {
-                console.log("FINISH encoding ", vid, "\n\t");
-                vid.progress = 'complete';
+                console.log("FINISH encoding ", state, "\n\t");
+                state.progress = 'complete';
                 delete encodeStates[id];
             });
-        handle.vid = vid;
+        handle.state = state;
         handle.id = id;
 
         return handle;
